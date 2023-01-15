@@ -31,18 +31,14 @@
       "salary": "50000"
     },
     {
-      "name": "Harry",
-      "salary": "5000",
-      "id": 8
-    },
-    {
-<<<<<<< HEAD
-      "name": "ramu",
-=======
       "name": "kiran",
->>>>>>> uc2-viewDatafromJsonServer
       "salary": "50000",
       "id": 9
+    },
+    {
+      "name": "kiran",
+      "salary": "50000",
+      "id": 10
     }
   ]
 }

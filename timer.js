@@ -7,7 +7,6 @@ function makeAJAXCall(methodType,url,callback,async = true,data = null) {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         console.log("state change called ready state" + xhr.readyState + "at :" + showtime() + " status" + xhr.status);
-    
     if (xhr.readyState === 4) {
         if (xhr.status === 200 || xhr.status === 201) {
             callback(xhr.responseText);
@@ -15,15 +14,17 @@ function makeAJAXCall(methodType,url,callback,async = true,data = null) {
         else if (xhr.status >= 400) {
             console.log("handle 400 client error" + xhr.status + "at:" + showtime());
         }
-            xhr.open(methodType, url, async);
-            if (data) {
-                console.log(JSON.stringify(data));
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.send(JSON.stringify(data));
-            }
-            else xhr.send();
-            console.log(methodType + " request sent to server at" + showtime());
-    });   
+    }
+}
+xhr.open(methodType, url, async);
+if (data) {
+    console.log(JSON.stringify(data));
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+}
+else
+xhr.send();
+console.log(methodType + " request sent to server at" + showtime());     
 }
 const getURL="http://localhost:3000/employees/";
 function getUserDetails(data) {

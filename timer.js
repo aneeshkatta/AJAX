@@ -35,7 +35,7 @@ function makePromiseCall(methodType, url, async = true, data = null) {
         console.log(" user added post "+responseText)
     })
     .catch(error => console.log("get error status "+JSON.stringify(error)));
-    const deleteURL = "http://localhost:3000/employees/6";
+    const deleteURL = "http://localhost:3000/employees/11";
     makePromiseCall("DELETE", deleteURL, false)
     .then(responseText => {
         console.log(" user deleted post "+responseText)
